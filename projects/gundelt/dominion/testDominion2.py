@@ -27,7 +27,7 @@ supply_order = testUtility.CreateSupplyOrder()
 supply = testUtility.CreateSupply(box)
 
 #The supply always has these cards
-testUtility.AddCardsToSupply()
+testUtility.AddCardsToSupply(supply, len(player_names), nV, nC)
 
 #initialize the trash
 trash = []

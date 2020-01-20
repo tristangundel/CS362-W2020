@@ -14,11 +14,12 @@ import testUtility
 player_names = ["Annie","*Ben","*Carla"]
 
 #number of curses and victory cards
-nV = testUtility.GetNumOfVictory(len(player_names) + 1)
+nV = testUtility.GetNumOfVictory(len(player_names))
 nC = testUtility.GetNumOfCurse(len(player_names))
 
 #Define box
 box = testUtility.CreateBox(nV)
+box["Chapel"] = [Dominion.Chapel()] * 20
 
 #Create Supply Order
 supply_order = testUtility.CreateSupplyOrder()
@@ -27,7 +28,7 @@ supply_order = testUtility.CreateSupplyOrder()
 supply = testUtility.CreateSupply(box)
 
 #The supply always has these cards
-testUtility.AddCardsToSupply()
+testUtility.AddCardsToSupply(supply, len(player_names), nV, nC)
 
 #initialize the trash
 trash = []
